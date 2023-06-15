@@ -2,7 +2,7 @@ package Ejercicios;
 
 import java.util.Scanner;
 
-public class Ejercicio2 {
+public class mostrarNombre {
 	public static void main(String[] args) {
 
 		String name;

@@ -2,7 +2,7 @@ package Ejercicios;
 
 import java.util.Scanner;
 
-public class Ejercicio4 {
+public class ParOImpar {
 	public static void main(String[] args) {
 
 		int number;

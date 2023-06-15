@@ -2,7 +2,7 @@ package Ejercicios;
 
 import java.util.Scanner;
 
-public class Ejercicio7 {
+public class mayorOMenor {
 	public static void main(String[] args) {
 
 		int n1, n2;

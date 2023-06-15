@@ -2,7 +2,7 @@ package Ejercicios;
 
 import java.util.Scanner;
 
-public class Ejercicio3 {
+public class NumeroDobleYTriple {
 	public static void main(String[] args) {
 
 		int number;

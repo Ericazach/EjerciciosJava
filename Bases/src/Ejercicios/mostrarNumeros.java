@@ -2,7 +2,7 @@ package Ejercicios;
 
 import java.util.Scanner;
 
-public class Ejercicios {
+public class mostrarNumeros {
 	public static void main(String[] args) {
 		int n1, n2;
 

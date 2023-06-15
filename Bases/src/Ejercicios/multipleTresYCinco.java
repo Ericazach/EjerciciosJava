@@ -2,7 +2,7 @@ package Ejercicios;
 
 import java.util.Scanner;
 
-public class Ejercicio8 {
+public class multipleTresYCinco {
 	public static void main(String[] args) {
 
 		int number;

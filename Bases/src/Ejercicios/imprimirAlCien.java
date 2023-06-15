@@ -1,6 +1,6 @@
 package Ejercicios;
 
-public class Ejercicio10 {
+public class imprimirAlCien {
 	public static void main(String[] args) {
 
 		int i = 1;
