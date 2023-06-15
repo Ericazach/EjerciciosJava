@@ -1,35 +1,32 @@
+import static com.ipartek.formacion.bibliotecas.Consola.*;
+
 import java.util.Date;
-import java.util.Scanner;
 
 public class Conversiones {
 	public static void main(String[] args) {
-		String numeroTexto = "123";
 
-		System.out.println(numeroTexto + 4);
+		int numero = leerEntero("Dime un numero");
 
-		int numero = Integer.parseInt(numeroTexto);
+		mostrarLinea(numero + 4);
 
-		System.out.println(numero + 4);
+		mostrarLinea(leerEntero("Dime un numero"));
 
-		Scanner sc = new Scanner(System.in);
+		boolean bool = leerBoolean("Te gusta?");
 
-		System.out.println("Te gusta?");
-
-		String boolTexto = sc.nextLine();
-
-		boolean bool = "S".equalsIgnoreCase(boolTexto.trim().substring(0, 1));
-
-		System.out.println(bool);
-
-		sc.close();
+		mostrarLinea(bool);
 
 		String boolOtroTexto = String.valueOf(bool);
-		
-		System.out.println(boolOtroTexto);
-		
+
+		mostrarLinea(boolOtroTexto);
+
 		Date fecha = new Date();
 		String fechaTexto = fecha.toString();
-		
-		System.out.println(fechaTexto);
+
+		mostrarLinea(fechaTexto);
+
+		fechaTexto = String.valueOf(fecha);
+
+		mostrarLinea(fechaTexto);
 	}
+
 }
