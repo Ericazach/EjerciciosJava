@@ -25,6 +25,13 @@ public class Consola {
 
 		return entero;
 	}
+	
+	public static double leerDoble(String mensaje) {
+		String texto = leerLinea(mensaje);
+		double doble = Double.parseDouble(texto);
+
+		return doble;
+	}
 
 	public static boolean leerBoolean(String mensaje) {
 		String texto = leerLinea(mensaje);
