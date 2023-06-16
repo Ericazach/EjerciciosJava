@@ -20,5 +20,6 @@ public class obtenerCifras {
             System.out.print("Continuar? ");
             car = (char)System.in.read();
         }while(car!='n' && car != 'N');   
+        sc.close();
     }
 }

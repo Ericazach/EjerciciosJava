@@ -3,24 +3,25 @@ package EjerciciosDos;
 import static com.ipartek.formacion.bibliotecas.Consola.*;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class numerosAcabadosEnDos {
 	public static void main(String[] args) throws IOException {
 		int number, counter = 0;
-		char car = 's';
+		String car = "s";
 
-		number = leerEntero("Introduce un numero: ");
+		Scanner sc = new Scanner(System.in);
+//		number = leerEntero("Introduce un numero: ");
 
-		while (car != 'n' && car != 'N') {
+		do {
+			number = leerEntero("Introduce un numero ");
+
 			if (number % 10 == 2) {
 				counter++;
 			}
-
-			number = leerEntero("Introduce un numero: ");
-			mostrarLinea("Desea continuar?");
-			car = (char) System.in.read();
-
-		}
+			mostrarLinea("Desea continuar? (s/N)");
+			car = sc.nextLine();
+		} while (car.equals("s"));
 
 		mostrarLinea("Se ha introducido " + counter + " numeros acabados en 2");
 
