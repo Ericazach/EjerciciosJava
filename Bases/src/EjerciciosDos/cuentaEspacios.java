@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 public class cuentaEspacios {
 
 	public static void main(String[] args) {
-		mostrarLinea("Numero de palabras " + cuentaEspacios("Hola como"));
+		mostrarLinea("Numero de palabras " + cuentaEspacioss("Hola como"));
 
 		String frase = leerLinea("Introduce una frase");
 
@@ -15,7 +15,7 @@ public class cuentaEspacios {
 		mostrarLinea("Numero de palabras: " + st.countTokens());
 	}
 
-	public static int cuentaEspacios(String s) {
+	public static int cuentaEspacioss(String s) {
 		int counter = 1, pos;
 
 		s = s.trim();

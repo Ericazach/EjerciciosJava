@@ -15,13 +15,13 @@ public class contarChar {
 
 		car = leerLinea("Escribe una letra:");
 
-		counter = contarChar(texto, car);
+		counter = contarCharc(texto, car);
 
 		mostrarLinea("El caracter " + car + " aparece " + counter + " vez en el texto " + texto);
 
 	}
 
-	public static int contarChar(String text, String caracter) {
+	public static int contarCharc(String text, String caracter) {
 
 		int counterChar = 0, pos;
 
