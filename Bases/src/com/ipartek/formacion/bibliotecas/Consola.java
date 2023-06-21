@@ -2,6 +2,7 @@ package com.ipartek.formacion.bibliotecas;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class Consola {
@@ -12,12 +13,16 @@ public class Consola {
 		System.out.println(texto);
 	}
 
+	public static void mostrarLineaError(Object texto) {
+		System.err.println("ERROR: " + texto);
+	}
+
 	public static void mostrar(Object texto) {
 		System.out.print(texto);
 	}
 
 	public static String leerLinea(String mensaje) {
-		mostrar(mensaje + ": ");
+		mostrar(mensaje + " ");
 		return SC.nextLine();
 	}
 
@@ -27,28 +32,64 @@ public class Consola {
 
 		return entero;
 	}
-	
+
 	public static long leerLong(String mensaje) {
-		String texto = leerLinea(mensaje);
-		long l = Long.parseLong(texto);
+
+		boolean equivocado = true;
+
+		long l = 0;
+
+		do {
+			String texto = leerLinea(mensaje);
+			try {
+				l = Long.parseLong(texto);
+				equivocado = false;
+			} catch (NumberFormatException e) {
+				mostrarLineaError("No es un numero valido");
+			}
+		} while (equivocado);
 
 		return l;
 	}
-	
-	public static BigDecimal leerBigDecimal(String mensaje) {
-		String texto = leerLinea(mensaje);
-		BigDecimal db = new BigDecimal(texto);
 
-		return db;
+	public static BigDecimal leerBigDecimal(String mensaje) {
+
+		boolean equivocado = true;
+
+		BigDecimal bd = null;
+
+		do {
+			String texto = leerLinea(mensaje);
+			try {
+				bd = new BigDecimal(texto);
+				equivocado = false;
+			} catch (NumberFormatException e) {
+				mostrarLineaError("No es un numero valido");
+			}
+		} while (equivocado);
+
+		return bd;
 	}
-	
+
 	public static LocalDate leerLocalDate(String mensaje) {
-		String texto = leerLinea(mensaje);
-		LocalDate ld = LocalDate.parse(texto);
+		boolean equivocado = true;
+
+		LocalDate ld = null;
+
+		do {
+			String texto = leerLinea(mensaje + " (AAA-MM-DD)");
+			try {
+				ld = LocalDate.parse(texto);
+				equivocado = false;
+			} catch (DateTimeParseException e) {
+				mostrarLineaError(
+						"No es una fecha valida. Debe ser el año en cuatro dígitos, mes en dos dígitos y día en dos dígitos separados por guión. Por ejemplo: 2000-01-02 ");
+			}
+		} while (equivocado);
 
 		return ld;
 	}
-	
+
 	public static double leerDoble(String mensaje) {
 		String texto = leerLinea(mensaje);
 		double doble = Double.parseDouble(texto);
@@ -62,7 +103,5 @@ public class Consola {
 
 		return booleano;
 	}
-	
-	
 
 }

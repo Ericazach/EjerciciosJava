@@ -24,6 +24,6 @@ public class numerosAcabadosEnDos {
 		} while (car.equals("s"));
 
 		mostrarLinea("Se ha introducido " + counter + " numeros acabados en 2");
-
+		sc.close();
 	}
 }

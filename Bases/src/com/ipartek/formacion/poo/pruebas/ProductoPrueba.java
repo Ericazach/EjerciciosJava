@@ -1,10 +1,11 @@
 package com.ipartek.formacion.poo.pruebas;
 
+import static com.ipartek.formacion.bibliotecas.Consola.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import static com.ipartek.formacion.bibliotecas.Consola.*;
 import com.ipartek.formacion.poo.pojos.Producto;
 
 public class ProductoPrueba {
@@ -25,17 +26,20 @@ public class ProductoPrueba {
 
 		Producto pack = Producto.paqueteDosporUno(manzana, naranja);
 
-//		mostrarProducto(pack);
+		mostrarProducto(pack);
 //		
 //		System.out.println(pack);
 
+		ejemploAlmacen(manzana);
+
+	}
+
+	private static void ejemploAlmacen(Producto product) {
 		ArrayList<Producto> almacen = new ArrayList<>();
 
-		almacen.add(naranja);
-		almacen.add(manzana);
-		almacen.add(pack);
+		almacen.add(product);
 
-		Producto manzana2 = new Producto(manzana);
+		Producto manzana2 = new Producto(product);
 
 		almacen.add(manzana2);
 
@@ -53,7 +57,6 @@ public class ProductoPrueba {
 //			mostrarLinea(product);
 			mostrarProducto(producto);
 		}
-
 	}
 
 	private static void mostrarProducto(Producto p) {
@@ -63,11 +66,66 @@ public class ProductoPrueba {
 	private static Producto pedirProducto() {
 		Producto p = new Producto();
 
-		p.setId(leerLong("Id"));
-		p.setNombre(leerLinea("Nombre"));
-		p.setPrecio(leerBigDecimal("Precio"));
-		p.setCaducidad(leerLocalDate("Caducidad"));
+		pedirId(p);
+
+		pedirNombre(p);
+
+		pedirPrecio(p);
+
+		pedirCaducidad(p);
 
 		return p;
+	}
+
+	private static void pedirCaducidad(Producto p) {
+		boolean equivocado = true;
+
+		do {
+			try {
+				p.setCaducidad(leerLocalDate("Caducidad"));
+				equivocado = false;
+			} catch (Exception e) {
+				mostrarLineaError(e.getMessage());
+			}
+		} while (equivocado);
+	}
+
+	private static void pedirPrecio(Producto p) {
+		boolean equivocado = true;
+
+		do {
+			try {
+				p.setPrecio(leerBigDecimal("Precio"));
+				equivocado = false;
+			} catch (Exception e) {
+				mostrarLineaError(e.getMessage());
+			}
+		} while (equivocado);
+	}
+
+	private static void pedirNombre(Producto p) {
+		boolean equivocado = true;
+
+		do {
+			try {
+				p.setNombre(leerLinea("Nombre"));
+				equivocado = false;
+			} catch (Exception e) {
+				mostrarLineaError(e.getMessage());
+			}
+		} while (equivocado);
+	}
+
+	private static void pedirId(Producto p) {
+		boolean equivocado = true;
+		do {
+
+			try {
+				p.setId(leerLong("Id"));
+				equivocado = false;
+			} catch (Exception e) {
+				mostrarLineaError(e.getMessage());
+			}
+		} while (equivocado);
 	}
 }
