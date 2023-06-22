@@ -56,6 +56,7 @@ public class Fecha {
 		return date;
 	}
 
+	@SuppressWarnings("unused")
 	private boolean esBisiesto(Integer año) {
 		boolean bisiesto = false;
 

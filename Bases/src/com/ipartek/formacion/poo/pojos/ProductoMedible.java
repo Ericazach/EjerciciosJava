@@ -53,8 +53,9 @@ public class ProductoMedible extends Producto {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return String.format(
+				"ProductoMedible [id=%s, nombre=%s, precio=%s, caducidad=%s, alto=%s, ancho=%s, profundidad=%s]",
+				getId(), getNombre(), getPrecio(), getCaducidad(), alto, ancho, profundidad);
 	}
 
 	@Override

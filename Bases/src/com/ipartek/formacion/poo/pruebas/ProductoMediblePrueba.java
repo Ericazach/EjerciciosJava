@@ -69,8 +69,4 @@ public class ProductoMediblePrueba {
 		mostrarLinea(p1.equals(p2));
 	}
 
-	public String toString() {
-		return String.format(
-				"ProductoMedible [id=%s, nombre=%s, precio=%s, caducidad=%s, alto=%s, ancho=%s, profundidad=%s]");
-	}
 }
