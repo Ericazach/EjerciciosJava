@@ -88,6 +88,17 @@ public class Fecha {
 		fechaCorrecta(fecha);
 	}
 
+	public boolean esMayorQue(Fecha fecha) {
+		if (año > fecha.año) {
+			return true;
+		} else if (año == fecha.año && mes > fecha.mes) {
+			return true;
+		} else if (año == fecha.año && mes == fecha.mes && dia > fecha.dia) {
+			return true;
+		}
+		return false;
+	}
+
 	@Override
 	public String toString() {
 		return "Fecha: " + dia + "-" + mes + "-" + año;

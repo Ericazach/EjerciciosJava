@@ -1,20 +1,19 @@
 package EjerciciosTres;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JSpinner;
 import javax.swing.JTextField;
-import javax.swing.SpinnerListModel;
-import java.awt.Color;
 
 public class Formulario {
 
 	private JFrame frmRegistro;
 	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -44,7 +43,7 @@ public class Formulario {
 	 */
 	private void initialize() {
 		frmRegistro = new JFrame();
-		frmRegistro.getContentPane().setBackground(new Color(128, 128, 255));
+		frmRegistro.getContentPane().setBackground(new Color(192, 192, 192));
 		frmRegistro.setTitle("Registro");
 		frmRegistro.setBounds(100, 100, 462, 491);
 		frmRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,15 +64,14 @@ public class Formulario {
 		lblPais.setBounds(26, 51, 65, 23);
 		frmRegistro.getContentPane().add(lblPais);
 
+		@SuppressWarnings("rawtypes")
 		JList list = new JList();
 		list.setBounds(228, 108, -55, -34);
 		frmRegistro.getContentPane().add(list);
 
-		JSpinner spinner = new JSpinner();
-		spinner.setFont(new Font("Source Sans Pro ExtraLight", Font.PLAIN, 14));
-		spinner.setModel(new SpinnerListModel(new String[] { "Alemania", "Francia", "Espa\u00F1a" }));
-		spinner.setToolTipText("");
-		spinner.setBounds(114, 54, 115, 20);
-		frmRegistro.getContentPane().add(spinner);
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(114, 54, 115, 20);
+		frmRegistro.getContentPane().add(textField_1);
 	}
 }
