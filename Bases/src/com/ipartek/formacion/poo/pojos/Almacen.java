@@ -81,6 +81,17 @@ public class Almacen {
 		productos.add(producto);
 	}
 
+	public Producto cambiar(Producto producto) {
+		for (int i = 0; i < productos.size(); i++) {
+			if (productos.get(i).getId() == producto.getId()) {
+				productos.set(i, producto);
+				return producto;
+			}
+		}
+
+		return null;
+	}
+
 	public Producto sacar(Long id) {
 		Producto producto = null;
 
@@ -88,6 +99,16 @@ public class Almacen {
 			if (productos.get(i).getId() == id) {
 				producto = productos.get(i);
 				productos.remove(i);
+				return producto;
+			}
+		}
+
+		return null;
+	}
+
+	public Producto verPorId(Long id) {
+		for (Producto producto : productos) {
+			if (producto.getId() == id) {
 				return producto;
 			}
 		}
