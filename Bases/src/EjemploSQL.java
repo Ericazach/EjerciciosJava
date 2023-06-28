@@ -16,7 +16,7 @@ public class EjemploSQL {
 		final String SQL_INSERT = "INSERT INTO productosPrueba (nombre, precio, caducidad) VALUES (?,?,?)";
 		final String SQL_UPDATE = "UPDATE productosPrueba SET nombre=?, precio=?, caducidad=? WHERE id=?";
 		final String SQL_DELETE = "DELETE FROM productosPrueba WHERE id=?";
-		final String SQL_DELETEALL = "DELETE FROM productosPrueba";
+//		final String SQL_DELETEALL = "DELETE FROM productosPrueba";
 
 		// Establece el canal de comunicaciones con la base de datos
 		Connection con = DriverManager.getConnection(URL);
