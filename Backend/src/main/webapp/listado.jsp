@@ -3,9 +3,9 @@
 <%
 Object o = request.getAttribute("productos");
 
-System.out.println(o);
-
 List<Producto> productos = (List<Producto>)o;
+
+System.out.println(productos);
 %>
 <!DOCTYPE html>
 <html>
@@ -48,8 +48,10 @@ List<Producto> productos = (List<Producto>)o;
 </div>
 
 <div class="d-flex justify-content-center">
-<button class="btn btn-primary text-center">Agregar Producto</button>
+<a href="formulario.jsp" class="btn btn-primary text-center">Agregar producto </a>
 </div>
+
+
 
 </body>
 </html>
