@@ -30,6 +30,7 @@ System.out.println(productos);
 			<th class="col text-primary">Nombre</th>
 			<th class="col text-primary">Precio</th>
 			<th class="col text-primary">Caducidad</th>
+			<th class="col text-primary">Opciones</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -39,8 +40,8 @@ System.out.println(productos);
 			<td><%= producto.getNombre() %></td>
 			<td><%= producto.getPrecio() %></td>
 			<td><%= producto.getCaducidad() %></td>
-			<td><button class="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button></td>
-			<td><button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
+			<td><button class="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>
+			<button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
 		</tr>
 		<% } %>
 	</tbody>
