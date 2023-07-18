@@ -25,12 +25,14 @@ public class LoginServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
-		if ("erica@example.com".equals(email) && "12345".equals(password)) {
+		if ("erica@example.com".equals(email) && "1234".equals(password)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("usuario", email);
 
 			response.sendRedirect(request.getContextPath() + "/admin/index");
 		} else {
+			request.setAttribute("email", email);
+			request.setAttribute("error", "El usuario o la contraseña son incorrectos");
 			request.getRequestDispatcher("/WEB-INF/vistas/login.jsp").forward(request, response);
 		}
 
