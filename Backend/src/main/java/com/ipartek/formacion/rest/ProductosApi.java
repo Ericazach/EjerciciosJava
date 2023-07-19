@@ -26,7 +26,7 @@ import jakarta.ws.rs.core.Response;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class ProductosApi {
-	private static final String RUTA = "C:\\Users\\java\\git\\java-2556\\Backend\\src\\main\\webapp\\WEB-INF\\sql\\bases.db";
+	private static final String RUTA = "/Users/erin/Java/Projects/EjerciciosJava/Backend/src/main/webapp/WEB-INF/sql/bases.db";
 
 	@GET
 	public List<Producto> get() {
@@ -37,8 +37,8 @@ public class ProductosApi {
 	@Path("{id}")
 	public Response getId(@PathParam("id") Long id) {
 		Producto producto = obtenerPorId(id);
-		
-		if(producto == null) {
+
+		if (producto == null) {
 			return Response.status(Response.Status.NOT_FOUND).build();
 		} else {
 			return Response.ok(producto).build();
